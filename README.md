@@ -59,7 +59,7 @@ To analyze and visualize the percentage of urban tree canopy coverage across Por
    
    - Styled the aggregated neighborhood layer in QGIS using graduated symbology weighted by average canopy percentage.
      
-   ![Example Map Screenshot](Screenshots/average_canopy_pct_by_neighborhood.png)
+   ![Example Map Screenshot](Screenshots/QGIS_average_canopy_pct_by_neighborhood.png)
 
 ## Final Map
    
@@ -79,8 +79,8 @@ To analyze and visualize the percentage of urban tree canopy coverage across Por
 - Cartographic design in QGIS
 
 ## Outputs
-- [`canopy_by_neighborhood.gpkg`](./Outputs/canopy_by_neighborhood.gpkg)
-- [`Canopy_By_Neighborhood.png`](./Outputs/Canopy_By_Neighborhood.pdf)
+- [`canopy_by_neighborhood.gpkg`](Outputs/canopy_pct_by_neighborhood.gpkg)
+- [`Canopy_By_Neighborhood.png`](Outputs/multnomah_county_canopy_pct.pdf)
 - SQL query files in `/Scripts`
 - Project summary and documentation (this README)
 
