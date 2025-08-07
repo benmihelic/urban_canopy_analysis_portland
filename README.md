@@ -13,29 +13,48 @@ To analyze and visualize the percentage of urban tree canopy coverage across Por
 
 1. **Data Preparation in QGIS**
    - Downloaded NLCD Canopy raster (GeoTIFF) and Portland neighborhood boundaries (GeoJSON).
+     
    ![Example Map Screenshot](Screenshots/Multnomah_Canopy_Raster_Unclipped.png)
+
    - Clipped the national canopy raster to a county-sized area of interest around Portland using QGIS.
+     
    ![Example Map Screenshot](Screenshots/multnomah_neighborhood_canopy_raster.png)
+
    - Converted the clipped raster into polygons using to enable vector-based analysis.
+   
    ![Example Map Screenshot](Screenshots/multnomah_neighborhood_canopy_vectors.png)
 
 2. **Spatial Analysis (PostGIS)**
-   - Imported the canopy polygons and neighborhood boundaries into a PostGIS database.
-   - Reprojected all layers to EPSG:5070 (NAD83 / Conus Albers) to ensure accurate area calculations.
+   - Imported the canopy polygons and neighborhood boundaries into a PostGIS database.  (QGIS Database Manager shown below)
+     
+   ![Example Map Screenshot](Screenshots/QGIS_Database_Manager.png)
+
+   - Grouped canopy polygons by raw canopy percentage value
+     
+   ![Example Map Screenshot](Screenshots/summary_by_canopy_pct.png)
+
+   - Grouped canopy polygons into 10% bins and counted polygons per bin
+     
+   ![Example Map Screenshot](Screenshots/summary_by_10_percent_bins.png)
+   
    - Used `ST_Intersects` and `ST_Area` to calculate average canopy percentage per neighborhood.
-   ![Example Map Screenshot](Screenshots/multnomah_neighborhood_canopy_vectors.png)
+     
+   ![Example Map Screenshot](Screenshots/weighted_average_canopy_by_neighborhood.png)
 
-3. **Data Aggregation**
-   - Grouped results by neighborhood, calculating:
-     - Total area of intersection
-     - Weighted average tree canopy percentage
-
-4. **Visualization**
-   - Styled the aggregated neighborhood layer in QGIS using graduated symbology.
-   - Created a print layout with a title, legend, scale bar, and data attribution.
+3. **Data Aggregation and Visualization**
+   - Created a new table based on the spatial analysis in the PostGIS database and imported the table as a new layer back into QGIS
+     
+   ![Example Map Screenshot](Screenshots/SQL_Create_Table.png)
+   
+   - Styled the aggregated neighborhood layer in QGIS using graduated symbology weighted by average canopy percentage.
+     
+   ![Example Map Screenshot](Screenshots/average_canopy_pct_by_neighborhood.png)
 
 ## Final Map
-_![Example Map Screenshot](Outputs/Canopy_By_Neighborhood.png)_
+   
+   - Created a print layout with a title, legend, scale bar, and data attribution.
+     
+   ![Example Map Screenshot](Outputs/multnomah_county_canopy_pct.png)
 
 ## Key Results
 - Tree canopy coverage varied significantly by neighborhood.
