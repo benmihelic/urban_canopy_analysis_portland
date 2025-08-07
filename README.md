@@ -11,15 +11,19 @@ To analyze and visualize the percentage of urban tree canopy coverage across Por
 
 ## Workflow Overview
 
-1. **Data Preparation**
+1. **Data Preparation in QGIS**
    - Downloaded NLCD Canopy raster (GeoTIFF) and Portland neighborhood boundaries (GeoJSON).
+   ![Example Map Screenshot](Screenshots/Multnomah_Canopy_Raster_Unclipped.png)
    - Clipped the national canopy raster to a county-sized area of interest around Portland using QGIS.
-   - Converted the clipped raster into polygons to enable vector-based analysis.
+   ![Example Map Screenshot](Screenshots/multnomah_neighborhood_canopy_raster.png)
+   - Converted the clipped raster into polygons using to enable vector-based analysis.
+   ![Example Map Screenshot](Screenshots/multnomah_neighborhood_canopy_vectors.png)
 
 2. **Spatial Analysis (PostGIS)**
    - Imported the canopy polygons and neighborhood boundaries into a PostGIS database.
    - Reprojected all layers to EPSG:5070 (NAD83 / Conus Albers) to ensure accurate area calculations.
    - Used `ST_Intersects` and `ST_Area` to calculate average canopy percentage per neighborhood.
+   ![Example Map Screenshot](Screenshots/multnomah_neighborhood_canopy_vectors.png)
 
 3. **Data Aggregation**
    - Grouped results by neighborhood, calculating:
