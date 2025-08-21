@@ -19,7 +19,7 @@ To analyze and visualize the percentage of urban tree canopy coverage across Por
    
    - Downloaded Portland neighborhood boundaries (GeoJSON) and filtered for Multnomah County.
      
-   ![Example Map Screenshot](Screenshots/multnomah_neighborhood_boundaries.png.png)
+   ![Example Map Screenshot](Screenshots/multnomah_neighborhood_boundaries.png)
 
    - Clipped the larger canopy raster to a county-sized area of interest around Multnomah County neighborhoods using QGIS.
      
