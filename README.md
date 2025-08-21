@@ -3,7 +3,7 @@
 ## Objective
 To analyze and visualize the percentage of urban tree canopy coverage across Portland neighborhoods using raster data from the National Land Cover Database (NLCD) and vector boundary data.
 
-## 🛠Tools & Technologies
+## Tools & Technologies
 - **QGIS** – for raster processing, spatial data cleanup, and map layout
 - **PostgreSQL + PostGIS** – for advanced spatial joins and SQL aggregation
 - **NLCD Canopy Dataset (2019)** – for tree canopy percentage values
@@ -43,7 +43,7 @@ To analyze and visualize the percentage of urban tree canopy coverage across Por
      
    ![Example Map Screenshot](Screenshots/SQL_summary_by_10_percent_bins.png)
    
-   - Used `ST_Intersects` and `ST_Area` to calculate average canopy percentage per neighborhood.
+   - Used `ST_Intersects` to calculate average canopy percentage per neighborhood.
      
    ![Example Map Screenshot](Screenshots/SQL_weighted_average_canopy_by_neighborhood.png)
 
